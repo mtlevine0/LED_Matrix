@@ -33,8 +33,8 @@ void setup(void){
 
 void loop(void){
 	for(uint8_t letter = 0; letter < 95; letter++){// Scroll through entire font  
-		for(uint8_t i = 0; i < fontInfo[letter][0]*2 + 1; i+=2){
-      		if(fontInfo[letter][0]*2 == i){// Place one pixel spaces between each character
+		for(uint8_t i = 0; i < fontInfo[letter][0]*2 + 1; i+=4){
+      		  if(fontInfo[letter][0]*2 == i){// Place one pixel spaces between each character
 				buffer[127]=0x00;
 				buffer[126]=0x00;
 				buffer[125]=0x00;
@@ -58,7 +58,7 @@ void loop(void){
 				}
 			}
 			writeDisplay();// Write buffer to display
-			delay(10);
+			delay(50);
 		}
 	}
 } 
